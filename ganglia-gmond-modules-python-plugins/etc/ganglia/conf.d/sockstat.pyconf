@@ -1,0 +1,33 @@
+modules {
+  module {
+    name = "sockstat"
+    language = "python"
+  }
+}
+
+#/* Collection groups for the sockstat
+# python module */
+collection_group {
+  collect_every = 3
+  time_threshold = 20
+  metric {
+    name = "tcp_total"
+    title = "Total TCP sockets"
+    value_threshold = 1.0
+  }
+  metric {
+    name = "tcp_established"
+    title = "TCP established sockets"
+    value_threshold = 1.0
+  }
+  metric {
+    name = "tcp_timewait"
+    title = "TCP timewait sockets"
+    value_threshold = 1.0
+  }
+  metric {
+    name = "udp_total"
+    title = "Total UDP sockets"
+    value_threshold = 1.0
+  }
+}
